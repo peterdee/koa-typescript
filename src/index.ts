@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
 
