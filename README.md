@@ -4,7 +4,7 @@
 
 The `.env` file is required
 
-Please see the [`.env.example`] file for the list of the required environmental variables
+Please see the [`.env.example`](.env.example) file for the list of the required environmental variables
 
 ### Deploy
 

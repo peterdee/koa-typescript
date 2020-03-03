@@ -32,3 +32,5 @@ app.use(router.routes());
 const PORT = Number(process.env.PORT) || 2020;
 /* tslint:disable-next-line:no-console */
 app.listen(PORT, () => console.log(`-- Server is running on port ${PORT}`));
+
+export default app;
