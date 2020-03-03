@@ -5,6 +5,7 @@ import * as Koa from 'koa';
 import * as Router from 'koa-router';
 
 import * as bodyParser from 'koa-bodyparser';
+import * as favicon from 'koa-favicon';
 import * as json from 'koa-json';
 import * as logger from 'koa-logger';
 
@@ -22,6 +23,7 @@ router.get('/', (ctx: Koa.Context): void => {
 });
 
 app.use(bodyParser());
+app.use(favicon(`${process.cwd()}/assets/favicon.ico`));
 app.use(json());
 app.use(logger());
 
