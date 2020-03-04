@@ -9,6 +9,8 @@ import * as favicon from 'koa-favicon';
 import * as json from 'koa-json';
 import * as logger from 'koa-logger';
 
+import { calculateDeploymentDate, calculateUptime } from './services';
+
 const app = new Koa();
 const router = new Router();
 
@@ -16,8 +18,10 @@ router.get('/', (ctx: Koa.Context): void => {
   ctx.status = 200;
   ctx.body = {
     datetime: Date.now(),
+    deployed: calculateDeploymentDate(),
     info: 'OK',
     status: ctx.status,
+    uptime: calculateUptime(),
   };
   return ctx.body;
 });
