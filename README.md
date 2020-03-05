@@ -26,8 +26,36 @@ npm i
 
 ### Launch
 
+For the local deployment, run:
+
 ```shell script
 npm start
+```
+
+For the staging, install the [PM2]() module:
+
+```shell script
+npm i -g pm2
+pm2 install pm2-logrotate
+```
+
+Start the server with PM2:
+
+```shell script
+pm2 start npm --no-automation --name koa-typescript -- run start
+pm2 save
+```
+
+To restart the server, run:
+
+```shell script
+pm2 restart koa-typescript
+```
+
+To stop the server, run:
+
+```shell script
+pm2 delete koa-typescript && killall node
 ```
 
 ### Database migrations
