@@ -2,6 +2,7 @@ import createDatabase from './create-database';
 import { DATABASE } from '../config';
 import db from './index';
 import { log } from '../services';
+import migrate from './migrate';
 import seeding from './seeding';
 
 /**
@@ -26,6 +27,9 @@ import seeding from './seeding';
         throw new Error(error);
       }
     }
+
+    // run migrations
+    await migrate(DATABASE.migrations);
 
     // do the seeding
     await seeding(DATABASE.seeding);

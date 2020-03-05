@@ -9,3 +9,4 @@ node_modules/
 
 # Project files
 .env
+migrations.json

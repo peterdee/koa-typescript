@@ -5,6 +5,7 @@ export const DATABASE = {
   database: env.DATABASE_NAME,
   host: env.DATABASE_HOSTNAME,
   logging: env.DATABASE_LOGGING === 'true',
+  migrations: env.DATABASE_MIGRATIONS === 'true',
   password: env.DATABASE_PASSWORD,
   port: Number(env.DATABASE_PORT),
   seeding: env.DATABASE_SEEDING === 'true',
