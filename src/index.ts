@@ -41,7 +41,6 @@ router.get('/user', async (ctx: Koa.Context): Promise<void> => {
       email: User.email,
       firstName: User.firstName,
       lastName: User.lastName,
-      status: User.status || 'active',
     },
     datetime: Date.now(),
     deployed: calculateDeploymentDate(),
