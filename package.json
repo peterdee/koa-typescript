@@ -1,6 +1,6 @@
 {
   "name": "koa-typescript",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "A Koa application with Typescript",
   "author": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node ./build/index.js"
+    "start": "tsc && node -r dotenv/config ./build/db/sync.js && node ./build/index.js"
   },
   "engines": {
     "node": "12.16.1",
@@ -23,9 +23,11 @@
   "keywords": [
     "Koa",
     "Node",
+    "Sequelize",
     "Typescript"
   ],
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "dotenv": "^8.2.0",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.2.1",
@@ -33,9 +35,13 @@
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.1",
     "koa-router": "^8.0.8",
+    "pg": "^7.18.2",
+    "sequelize": "^5.21.5",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/bluebird": "^3.5.30",
     "@types/koa": "^2.11.2",
     "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-favicon": "^2.0.19",
@@ -43,6 +49,7 @@
     "@types/koa-logger": "^3.1.1",
     "@types/koa-router": "^7.4.0",
     "@types/node": "^13.7.7",
+    "@types/validator": "^12.0.1",
     "tslint": "^6.0.0"
   }
 }

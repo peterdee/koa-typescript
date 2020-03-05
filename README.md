@@ -1,10 +1,14 @@
 ## A Koa application with Typescript
 
+This application is used for the Jenkins auto-deployment testing
+
+Stack: Koa, Node, Sequelize, Typescript
+
 ### Environemt
 
 The `.env` file is required
 
-Please see the [`.env.example`](.env.example) file for the list of the required environmental variables
+Check the [`.env.example`](.env.example) file for the list of the required environmental variables
 
 ### Deploy
 
