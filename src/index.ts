@@ -10,13 +10,39 @@ import * as json from 'koa-json';
 import * as logger from 'koa-logger';
 
 import { calculateDeploymentDate, calculateUptime } from './services';
+import db from './db';
 
 const app = new Koa();
 const router = new Router();
 
+/**
+ * Index route
+ */
 router.get('/', (ctx: Koa.Context): void => {
   ctx.status = 200;
   ctx.body = {
+    datetime: Date.now(),
+    deployed: calculateDeploymentDate(),
+    info: 'OK',
+    status: ctx.status,
+    uptime: calculateUptime(),
+  };
+  return ctx.body;
+});
+
+/**
+ * Load user data
+ */
+router.get('/user', async (ctx: Koa.Context): Promise<void> => {
+  const User = await db.Users.findOne({ where: { isDeleted: false } });
+  ctx.status = 200;
+  ctx.body = {
+    data: {
+      email: User.email,
+      firstName: User.firstName,
+      lastName: User.lastName,
+      status: User.status || 'active',
+    },
     datetime: Date.now(),
     deployed: calculateDeploymentDate(),
     info: 'OK',
