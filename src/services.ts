@@ -42,3 +42,12 @@ export const calculateUptime = (): string => {
     : ''}`;
   return `${daysText}, ${hoursText}, ${minutesText}, ${secondsText}`;
 };
+
+/**
+ * Show console log
+ * @param text {string} - text to show
+ * @param data {*} - additional value to show
+ * @return {boolean|void}
+ */
+/* tslint:disable-next-line:no-console */
+export const log = (text: string, data?: any) => console.log(`${text}`, data || '');
