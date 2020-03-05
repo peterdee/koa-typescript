@@ -9,3 +9,10 @@ on:
 env:
   # List all of the environment variables
   TEST_SECRET: ${{ secrets.TEST_SECRET }}
+
+jobs:
+  # Testing the secret
+  print-variables:
+    name: Print secret variables
+    run: |
+      echo The secret is: $TEST_SECRET
