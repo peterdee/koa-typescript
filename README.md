@@ -32,7 +32,7 @@ For the local deployment, run:
 npm start
 ```
 
-For the staging, install the [PM2]() module:
+For the staging, install the [PM2](https://www.npmjs.com/package/pm2) module:
 
 ```shell script
 npm i -g pm2
@@ -55,7 +55,7 @@ pm2 restart koa-typescript
 To stop the server, run:
 
 ```shell script
-pm2 delete koa-typescript && killall node
+pm2 delete koa-typescript
 ```
 
 ### Database migrations
