@@ -14,6 +14,7 @@ jobs:
   # Testing the secret
   print-variables:
     name: Print secret variables
+    runs-on: ubuntu-18.04
     steps:
     - name: Do the printing
       run: |
