@@ -1,0 +1,20 @@
+name: SetEnvironmentVariables
+
+on:
+  # Trigger the workflow on push to the stage branch
+  push:
+    branches:
+      - stage
+
+env:
+  # List all of the environment variables
+  TEST_SECRET: ${{ secrets.TEST_SECRET }}
+
+jobs:
+  # Testing the secret
+  print-variables:
+    name: Print secret variables
+    steps:
+    - name: Do the printing
+      run: |
+        echo The secret is: $TEST_SECRET
