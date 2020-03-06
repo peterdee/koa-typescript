@@ -19,3 +19,10 @@ jobs:
     - name: Do the printing
       run: |
         echo The secret is: $TEST_SECRET
+  create-file:
+    name: Create file on the self-hosted runner
+    runs-on: self-hosted
+    steps:
+    - name: Create file
+      run: |
+        cd /home/dunice && echo $TEST_SECRET > testfile
