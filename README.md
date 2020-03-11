@@ -26,10 +26,14 @@ npm i
 
 ### Launch
 
-For the local deployment, run:
+For the local deployment, run (in separate terminals):
 
 ```shell script
-npm start
+npm run watch
+```
+
+```shell script
+npm run dev
 ```
 
 For the staging, install the [PM2](https://www.npmjs.com/package/pm2) module:
@@ -42,7 +46,7 @@ pm2 install pm2-logrotate
 Start the server with PM2:
 
 ```shell script
-pm2 start npm --no-automation --name koa-typescript -- run start
+pm2 start npm --no-automation --name koa-typescript -- run prod
 pm2 save
 ```
 
