@@ -10,9 +10,8 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "dev": "node -r dotenv/config ./build/db/sync.js && nodemon ./build/index.js",
-    "prod": "tsc && node -r dotenv/config ./build/db/sync.js && node ./build/index.js",
-    "watch": "tsc --watch"
+    "dev": "tsc --watch & node -r dotenv/config ./build/db/sync.js && nodemon ./build/index.js",
+    "prod": "tsc && node -r dotenv/config ./build/db/sync.js && node ./build/index.js"
   },
   "engines": {
     "node": "12.16.1",

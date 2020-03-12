@@ -26,11 +26,7 @@ npm i
 
 ### Launch
 
-For the local deployment, run (in separate terminals):
-
-```shell script
-npm run watch
-```
+For the local deployment, run:
 
 ```shell script
 npm run dev
